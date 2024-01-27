@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let arabic = Number(prompt("Enter your arabic grade /60:"))
+        let french = Number(prompt("Enter your french grade /40:"))
+        let english = Number(prompt("Enter your english grade /20:"))
+        let maths = Number(prompt("Enter your maths grade /60:"))
+        let Svt = Number(prompt("Enter your Science grade /20:"))
+        let physique = Number(prompt("Enter your physics grade /20:"))
+        let chimie = Number(prompt("Enter your Chemistry grade /20:"))
+        let hist = Number(prompt("Enter your history grade /20:"))
+        let geo = Number(prompt("Enter your Geography grade /20:"))
+        let tarbia = Number(prompt("Enter your Tarbia grade /20:"))
+        let sum = arabic + french + english + maths + Svt + physique + chimie + hist + geo + tarbia;
+        let average = (sum / 300) * 20;
+        alert("This is your Grade: " + average.toFixed(2));
+    </script>
+</body>
+
+</html>
