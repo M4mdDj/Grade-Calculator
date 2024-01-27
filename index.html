@@ -4,30 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Grade Calculator</title>
     <style>
         body {
             background-color: cadetblue;
+        }
+
+        input {
+            border: 1px solid;
+            border-radius: 5px;
+            width: 195px;
+            margin: 5px 0px;
+            text-align: center;
+            padding: 8px 16px;
+        }
+
+        div {
+            background-color: rgb(199, 229, 255);
+            border: 1px solid;
+            max-width: 230px;
+            margin: 50px auto;
+            padding: 10px;
+            box-shadow: 1px 1px 3px grey, -1px -1px 3px grey;
+            animation-name: mixColors;
+            animation-duration: 3s;
+            animation-iteration-count: 3;
+            animation-fill-mode: forwards;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: monospace;
+            font-size: 40pt;
         }
     </style>
 </head>
 
 <body>
-    <script>
-        let arabic = Number(prompt("Enter your arabic grade /60:"))
-        let french = Number(prompt("Enter your french grade /40:"))
-        let english = Number(prompt("Enter your english grade /20:"))
-        let maths = Number(prompt("Enter your maths grade /60:"))
-        let Svt = Number(prompt("Enter your Science grade /20:"))
-        let physique = Number(prompt("Enter your physics grade /20:"))
-        let chimie = Number(prompt("Enter your Chemistry grade /20:"))
-        let hist = Number(prompt("Enter your history grade /20:"))
-        let geo = Number(prompt("Enter your Geography grade /20:"))
-        let tarbia = Number(prompt("Enter your Tarbia grade /20:"))
-        let sum = arabic + french + english + maths + Svt + physique + chimie + hist + geo + tarbia;
-        let average = (sum / 300) * 20;
-        alert("This is your Grade: " + average.toFixed(2));
-    </script>
+    <h1>Grade <br> Calculator</h1>
+    <div>
+        <form id="gradesForm">
+            <label for="arabic">Arabic grade /60:</label><br>
+            <input type="number" id="arabic" name="arabic"><br>
+            <label for="french">French grade /40:</label><br>
+            <input type="number" id="french" name="french"><br>
+            <label for="english">English grade /20:</label><br>
+            <input type="number" id="english" name="english"><br>
+            <label for="maths">Maths grade /60:</label><br>
+            <input type="number" id="maths" name="maths"><br>
+            <label for="Svt">Science grade /20:</label><br>
+            <input type="number" id="Svt" name="Svt"><br>
+            <label for="physique">Physics grade /20:</label><br>
+            <input type="number" id="physique" name="physique"><br>
+            <label for="chimie">Chemistry grade /20:</label><br>
+            <input type="number" id="chimie" name="chimie"><br>
+            <label for="hist">History grade /20:</label><br>
+            <input type="number" id="hist" name="hist"><br>
+            <label for="geo">Geography grade /20:</label><br>
+            <input type="number" id="geo" name="geo"><br>
+            <label for="tarbia">Tarbia grade /20:</label><br>
+            <input type="number" id="tarbia" name="tarbia"><br>
+            <input type="submit" value="Calculate Grade">
+        </form>
+        <p id="result"></p>
+        <script>
+            document.getElementById('gradesForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                let arabic = Number(document.getElementById('arabic').value);
+                let french = Number(document.getElementById('french').value);
+                let english = Number(document.getElementById('english').value);
+                let maths = Number(document.getElementById('maths').value);
+                let Svt = Number(document.getElementById('Svt').value);
+                let physique = Number(document.getElementById('physique').value);
+                let chimie = Number(document.getElementById('chimie').value);
+                let hist = Number(document.getElementById('hist').value);
+                let geo = Number(document.getElementById('geo').value);
+                let tarbia = Number(document.getElementById('tarbia').value);
+                let sum = arabic + french + english + maths + Svt + physique + chimie + hist + geo + tarbia;
+                let average = (sum / 300) * 20;
+                document.getElementById('result').textContent = "This is your Grade: " + average.toFixed(2);
+            });
+        </script>
+    </div>
 </body>
 
 </html>
